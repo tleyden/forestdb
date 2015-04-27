@@ -3,6 +3,9 @@ FROM centos:centos7
 
 MAINTAINER Traun Leyden <tleyden@couchbase.com>
 
+# forestdb installs here, so add to linker PATH
+ENV LD_LIBRARY_PATH /usr/local/lib/
+
 # Install yum dependencies
 RUN yum -y update && \
     yum groupinstall -y development && \
